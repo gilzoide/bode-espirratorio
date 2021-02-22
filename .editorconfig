@@ -4,6 +4,6 @@ root = true
 indent_style = spaces
 indent_size = 2
 
-[*.gd]
+[*.{gd,shader}]
 indent_style = tab
 indent_size = 4
