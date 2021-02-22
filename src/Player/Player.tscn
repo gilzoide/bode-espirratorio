@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/bode_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Player/Bode.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 28.0
+
+[node name="Player" type="RigidBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 2, -2 )
+frames = ExtResource( 1 )
+animation = "espirro"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
