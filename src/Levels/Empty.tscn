@@ -6,7 +6,7 @@
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 build_mode = 1
-polygon = PoolVector2Array( 0, 0, 1023, 3, 1024, 574, 2, 576 )
+polygon = PoolVector2Array( 0, 0, 1023, 0, 1024, 550, 2, 550 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 510, 287 )
+position = Vector2( 510, 471 )

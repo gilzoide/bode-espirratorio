@@ -21,13 +21,9 @@ void fragment() {
 	
 	float abs_textured_angle = mix(initial_angle, end_angle, textured_angle);
 	float textured_radius = outer_radius - (radius_delta * 0.5);
-	float dist = sqrt(pow(textured_radius, 2) + pow(radius, 2) - 2.0*textured_radius*radius*cos(angle - abs_textured_angle));
-//	vec2 textured_point = (vec2(cos(abs_textured_angle), sin(abs_textured_angle)) * (outer_radius - (radius_delta * 0.5))) / TEXTURE_PIXEL_SIZE;
-//	textured_point = (textured_point + 1.0) / 2.0;
-//	vec2 current_point = UV / TEXTURE_PIXEL_SIZE;
+	float dist_squared = pow(textured_radius, 2) + pow(radius, 2) - 2.0 * textured_radius * radius * cos(angle - abs_textured_angle);
 	bool isInside = ((radius01 >= 0.0 && radius01 <= 1.0) && (angle01 >= 0.0 && angle01 <= textured_angle)) ||
-//		distance(textured_point, current_point) <= 0.1;
-		dist <= (radius_delta * TEXTURE_PIXEL_SIZE.x);
+		dist_squared <= pow(radius_delta * TEXTURE_PIXEL_SIZE.x, 2);
 	
 	// Texel color fetching from texture sampler
 	vec4 texelColor = texture(TEXTURE, vec2(angle01, radius01));
