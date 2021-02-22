@@ -1,33 +1,41 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player/bode_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Player/Bode.gd" type="Script" id=2]
 [ext_resource path="res://Player/IntensityGauge/intensity_gauge_gradienttexture.tres" type="Texture" id=3]
 [ext_resource path="res://Player/IntensityGauge/intensity_gauge_curve_shadermaterial.tres" type="Material" id=4]
 [ext_resource path="res://Player/IntensityGauge/IntensityGauge.gd" type="Script" id=5]
+[ext_resource path="res://Player/Player_ComecaEspirrar_animation.tres" type="Animation" id=6]
+[ext_resource path="res://Player/Player_Espirro_animation.tres" type="Animation" id=7]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 28.0
+radius = 50.0
+height = 22.0
 
 [node name="Player" type="RigidBody2D"]
 script = ExtResource( 2 )
+sneeze_torque = 3000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource( 1 )
 
-[node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 2, -2 )
+[node name="Visuals" type="Node2D" parent="."]
+scale = Vector2( 2, 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="Visuals"]
+position = Vector2( 3, -1 )
 frames = ExtResource( 1 )
 animation = "espirro"
 
-[node name="IntensityGauge" type="Sprite" parent="."]
+[node name="IntensityGauge" type="Sprite" parent="Visuals"]
+visible = false
 material = ExtResource( 4 )
 position = Vector2( 15.3283, 6.15119 )
 scale = Vector2( 38, 72 )
 texture = ExtResource( 3 )
 script = ExtResource( 5 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-zoom = Vector2( 0.5, 0.5 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ComecaEspirrar = ExtResource( 6 )
+anims/Espirro = ExtResource( 7 )
