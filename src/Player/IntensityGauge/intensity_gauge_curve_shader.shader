@@ -9,13 +9,17 @@ uniform float outer_radius : hint_range(0, 1) = 1.0;
 uniform float textured_angle : hint_range(0, 1) = 1.0;
 
 void fragment() {
+	// Transform UV from [0, 0]~[1, 1] to [-1, -1]~[1, 1], so sprite center is [0, 0]
 	vec2 normalizedUV = UV * 2.0 - 1.0;
 	
+	// Transform cartesian [X, Y] to polar coordinates [Angle, Radius]
 	float angle = atan(normalizedUV.y, normalizedUV.x);
+	float radius = length(normalizedUV);
+	
+	// Remap angle from initial_angle~end_angle to 0~1
 	float angle01 = (angle - initial_angle) / (end_angle - initial_angle);
 
-	float radius = length(normalizedUV);
-	float angle_inner_radius = mix(inner_radius, outer_radius, 1.0 - angle01);
+	float angle_inner_radius = mix(outer_radius, inner_radius, angle01);
 	float radius_delta = outer_radius - angle_inner_radius;
 	float radius01 = (radius - angle_inner_radius) / radius_delta;
 	
@@ -27,8 +31,7 @@ void fragment() {
 	
 	// Texel color fetching from texture sampler
 	vec4 texelColor = texture(TEXTURE, vec2(angle01, radius01));
-	vec4 pixelColor = float(isInside) * texelColor;
+	texelColor.a *= float(isInside);
 
-	// Calculate final fragment color
-	COLOR *= pixelColor;
+	COLOR *= texelColor;
 }
