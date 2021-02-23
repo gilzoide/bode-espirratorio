@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="191.37793"
-   height="201.40059"
-   viewBox="0 0 50.635411 53.28724"
+   width="193.37793"
+   height="203.40059"
+   viewBox="0 0 51.164578 53.816407"
    version="1.1"
    id="svg584"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)"
-   sodipodi:docname="Goat-vector.svg">
+   sodipodi:docname="goat-vector.svg">
   <defs
      id="defs578">
     <clipPath
@@ -76,19 +76,6 @@
            id="path819" />
       </g>
     </clipPath>
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter101"
-       x="-0.0098540355"
-       width="1.0197082"
-       y="-0.009358733"
-       height="1.0187175">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="5.8316776"
-         id="feGaussianBlur103" />
-    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -97,24 +84,33 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="80.820652"
-     inkscape:cy="117.39547"
+     inkscape:zoom="2.6857761"
+     inkscape:cx="57.753643"
+     inkscape:cy="104.21221"
      inkscape:document-units="px"
      inkscape:current-layer="g881"
      inkscape:document-rotation="0"
-     showgrid="false"
+     showgrid="true"
      inkscape:window-width="1920"
      inkscape:window-height="1003"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     fit-margin-top="1"
-     fit-margin-left="1"
-     fit-margin-right="1"
-     fit-margin-bottom="1"
+     fit-margin-top="2"
+     fit-margin-left="2"
+     fit-margin-right="2"
+     fit-margin-bottom="2"
      lock-margins="false"
-     units="px" />
+     units="px"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:lockguides="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid42"
+       originx="0.26458334"
+       originy="0.26458334" />
+  </sodipodi:namedview>
   <metadata
      id="metadata581">
     <rdf:RDF>
@@ -131,7 +127,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0.30710733,1.2993899)">
+     transform="translate(0.57169067,1.5639733)">
     <g
        id="g881"
        transform="matrix(-1,0,0,1,50.639045,-1.9521045)"
@@ -143,7 +139,8 @@
          inkscape:label="ChifreTras" />
       <g
          id="g885"
-         inkscape:label="PernaTrasFundo">
+         inkscape:label="PernaTrasFundo"
+         transform="matrix(0.98975678,0,0,0.99227902,-32.048065,0.13523003)">
         <path
            d="m 40.814371,35.718265 v 16.383352 c 0,0.818092 0.677686,1.481667 1.512005,1.481667 h 2.165703 c 0,0 1.936045,0 1.936045,-2.844447 0,-2.845153 0,-15.020572 0,-15.020572 h -5.613753"
            style="fill:#bcae95;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0352778"
@@ -155,7 +152,8 @@
       </g>
       <g
          id="g889"
-         inkscape:label="PernaFrenteFundo">
+         inkscape:label="PernaFrenteFundo"
+         transform="matrix(0.98957028,0,0,0.99227902,-19.360966,0.13523003)">
         <path
            d="m 20.514832,35.718265 v 16.383352 c 0,0.818092 0.678744,1.481667 1.513064,1.481667 h 2.16535 c 0,0 1.936397,0 1.936397,-2.844447 0,-2.845153 0,-15.020572 0,-15.020572 h -5.614811"
            style="fill:#bcae95;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0352778"
@@ -168,11 +166,13 @@
       <path
          d="M 46.23586,23.95242 H 31.572299 c -0.975078,0 -1.912762,-0.410281 -2.57422,-1.127478 L 17.546207,11.233723 9.4947598,14.75127 c 0,0 6.7772132,19.168533 7.2746302,20.11045 1.703211,3.226858 3.788834,6.016272 6.927497,6.016272 h 0.946856 v 11.285009 c 0,0.835378 0.677686,1.512358 1.513064,1.512358 h 2.631017 c 0,0 1.469672,0.01905 1.469672,-1.512358 0,-1.701095 0,-7.212895 0,-11.285009 h 14.780683 v 11.223625 c 0,0.818092 0.676628,1.481667 1.512359,1.481667 h 2.58198 c 0,0 1.519061,0.111125 1.519061,-1.481667 0,-1.844675 0.02999,-31.759878 0.02999,-31.759878 0,0 -2.201333,-0.733777 -2.892425,2.200981 -0.27693,1.178278 -1.25095,1.381125 -1.55328,1.4097"
          style="fill:#dbccaf;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0352778"
-         id="path421" />
+         id="path421"
+         inkscape:label="CorpoInteiro" />
       <path
          d="m 1.4464875,22.628092 c 1.2075583,1.04387 3.2476722,1.013531 5.3008389,0.238125 L 23.171954,17.425326 17.749407,11.504303 C 13.824754,7.1739558 8.4805236,9.0006388 5.9140653,12.259248 l -3.8618584,4.939594 c -0.9740195,1.077384 -2.42958059,3.853745 -0.6057194,5.42925"
          style="fill:#dbccaf;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0352778"
-         id="path423" />
+         id="path423"
+         inkscape:label="Cabeca" />
       <path
          d="m 9.1172875,15.406378 c 0.1710972,0.423334 -0.034572,0.904523 -0.4572,1.074209 -0.4226278,0.170744 -0.9041694,-0.03387 -1.0752667,-0.4572 -0.1696861,-0.422275 0.034572,-0.903817 0.4582584,-1.073503 0.4229805,-0.170392 0.9034639,0.03316 1.0742083,0.456494"
          style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.0352778"
