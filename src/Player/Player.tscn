@@ -17,8 +17,10 @@ bounce = 0.3
 
 [node name="Player" type="RigidBody2D"]
 physics_material_override = SubResource( 1 )
+gravity_scale = 3.0
+angular_damp = 0.7
 script = ExtResource( 2 )
-sneeze_impulse = 500.0
+sneeze_impulse = 900.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -97.9629, -15.4991, -23.5729, 102.545, 93.7662, 103.18, 93.7662, -25.8978, -6.72078, -100.527, -54.2314, -100.317, -97.958, -39.352 )
@@ -46,10 +48,10 @@ flip_h = true
 script = ExtResource( 5 )
 
 [node name="Wind" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0.156863 )
 position = Vector2( -98.2281, 11.1433 )
 rotation = 2.2281
-scale = Vector2( 1.2, 1 )
+scale = Vector2( 1e-05, 1 )
 texture = ExtResource( 8 )
 offset = Vector2( 35, 0 )
 
