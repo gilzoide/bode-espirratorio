@@ -9,9 +9,9 @@ onready var animation_player = $AnimationPlayer
 var sneeze_value : float = 0
 
 func _ready() -> void:
-	set_process_input(true)
+	set_process_unhandled_input(true)
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("espirro") or \
 			event is InputEventScreenTouch and event.is_pressed() and not event.is_echo():
 		start_sneezing()
