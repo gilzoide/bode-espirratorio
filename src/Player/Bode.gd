@@ -1,7 +1,6 @@
 extends RigidBody2D
 
 export(float) var sneeze_impulse : float = 100
-#export(float) var sneeze_torque : float = 30
 export(float) var sneezing_speed_factor : float = 0.1
 
 onready var sneeze_point = $SneezePoint
@@ -15,11 +14,13 @@ func _ready() -> void:
 	set_process_input(true)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("espirro"):
+	if event.is_action_pressed("espirro") or \
+			event is InputEventScreenTouch and event.is_pressed() and not event.is_echo():
 		start_sneezing()
 		animation_player.play("ComecaEspirrar")
 		print("ESPIRRA")
-	elif event.is_action_released("espirro"):
+	elif event.is_action_released("espirro") or \
+			event is InputEventScreenTouch and not event.is_pressed() and not event.is_echo():
 		sneeze_value = intensity_gauge.angle
 		animation_player.seek(0, true)
 		animation_player.play("Espirro")
