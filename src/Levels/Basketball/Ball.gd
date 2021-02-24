@@ -1,6 +1,6 @@
 extends "res://SlowMotion/SlowMotionRigidBody2D.gd"
 
-export(float) var bounce_factor: float = 500
+export(float) var bounce_factor: float = 700
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	._integrate_forces(state)
