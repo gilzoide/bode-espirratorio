@@ -12,7 +12,6 @@
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.9
-rough = true
 bounce = 0.3
 
 [node name="Player" type="RigidBody2D"]

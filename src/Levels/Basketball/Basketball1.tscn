@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Basketball/Hoop.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Basketball/Ball.tscn" type="PackedScene" id=3]
+
+[node name="Level" type="StaticBody2D"]
+
+[node name="Walls" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PoolVector2Array( -506.415, -470.711, 1541.23, -473.381, 1534.96, 671.212, -510, 670 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -315.55, 565.246 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 510, 97.4921 )
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="Hoop" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1398.91, -96.1085 )
+
+[node name="BasketballBall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 445.836, -181.538 )
