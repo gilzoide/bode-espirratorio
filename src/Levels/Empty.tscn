@@ -7,18 +7,18 @@
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 build_mode = 1
-polygon = PoolVector2Array( 0, 0, 1023, 0, 1024, 550, 2, 550 )
+polygon = PoolVector2Array( -506.415, -470.711, 1541.23, -473.381, 1534.19, 544.07, -510.387, 553.594 )
 
 [node name="Chao" type="Sprite" parent="."]
-position = Vector2( 0, 550 )
-scale = Vector2( 1024, 1 )
+position = Vector2( -1431.27, 550 )
+scale = Vector2( 3479.27, 1 )
 texture = ExtResource( 2 )
 centered = false
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 510, 471 )
-sneeze_impulse = Vector2( 100, -500 )
+position = Vector2( -308.55, 428.246 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 510, 273.881 )
+position = Vector2( 510, 97.4921 )
 current = true
+zoom = Vector2( 2, 2 )

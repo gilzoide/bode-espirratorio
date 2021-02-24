@@ -1,41 +1,60 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Player/bode_spriteframes.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Player/Bode.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Bode.gd" type="Script" id=2]
 [ext_resource path="res://Player/IntensityGauge/intensity_gauge_gradienttexture.tres" type="Texture" id=3]
 [ext_resource path="res://Player/IntensityGauge/intensity_gauge_curve_shadermaterial.tres" type="Material" id=4]
 [ext_resource path="res://Player/IntensityGauge/IntensityGauge.gd" type="Script" id=5]
 [ext_resource path="res://Player/Player_ComecaEspirrar_animation.tres" type="Animation" id=6]
 [ext_resource path="res://Player/Player_Espirro_animation.tres" type="Animation" id=7]
+[ext_resource path="res://Textures/cooling-symbol-3340.svg" type="Texture" id=8]
+[ext_resource path="res://Textures/goat-vector-inteiro.svg" type="Texture" id=9]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 50.0
-height = 22.0
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.9
+rough = true
+bounce = 0.3
 
 [node name="Player" type="RigidBody2D"]
+physics_material_override = SubResource( 1 )
 script = ExtResource( 2 )
-sneeze_torque = 3000.0
+sneeze_impulse = 500.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
-shape = SubResource( 1 )
-
-[node name="Visuals" type="Node2D" parent="."]
-scale = Vector2( 2, 2 )
-
-[node name="Sprite" type="AnimatedSprite" parent="Visuals"]
-position = Vector2( 3, -1 )
-frames = ExtResource( 1 )
-animation = "espirro"
-
-[node name="IntensityGauge" type="Sprite" parent="Visuals"]
-visible = false
-material = ExtResource( 4 )
-position = Vector2( 15.3283, 6.15119 )
-scale = Vector2( 38, 72 )
-texture = ExtResource( 3 )
-script = ExtResource( 5 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -97.9629, -15.4991, -23.5729, 102.545, 93.7662, 103.18, 93.7662, -25.8978, -6.72078, -100.527, -54.2314, -100.317, -97.958, -39.352 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+method_call_mode = 1
 anims/ComecaEspirrar = ExtResource( 6 )
 anims/Espirro = ExtResource( 7 )
+
+[node name="Bode" parent="." instance=ExtResource( 1 )]
+visible = false
+scale = Vector2( -1, 1 )
+
+[node name="BodeSprite" type="Sprite" parent="."]
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="IntensityGauge" type="Sprite" parent="."]
+visible = false
+material = ExtResource( 4 )
+position = Vector2( -64.7528, 27.6439 )
+scale = Vector2( 147.087, 278.693 )
+texture = ExtResource( 3 )
+flip_h = true
+script = ExtResource( 5 )
+
+[node name="Wind" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -98.2281, 11.1433 )
+rotation = 2.2281
+scale = Vector2( 1.2, 1 )
+texture = ExtResource( 8 )
+offset = Vector2( 35, 0 )
+
+[node name="SneezePoint" type="Position2D" parent="."]
+position = Vector2( -86.3463, -12.7135 )
+
+[node name="SneezeDirection" type="Position2D" parent="."]
+position = Vector2( -36.7307, -37.8567 )
