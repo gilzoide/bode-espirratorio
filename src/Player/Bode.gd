@@ -18,12 +18,12 @@ func _input(event: InputEvent) -> void:
 			event is InputEventScreenTouch and event.is_pressed() and not event.is_echo():
 		start_sneezing()
 		animation_player.play("ComecaEspirrar")
-		print("ESPIRRA")
 	elif event.is_action_released("espirro") or \
 			event is InputEventScreenTouch and not event.is_pressed() and not event.is_echo():
 		sneeze_value = intensity_gauge.angle
 		animation_player.seek(0, true)
 		animation_player.play("Espirro")
+		sneeze()
 
 var previous_angular_velocity
 var previous_linear_velocity
