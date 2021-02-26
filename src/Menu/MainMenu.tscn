@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Textures/vector-basketball.png" type="Texture" id=1]
 [ext_resource path="res://Menu/MainMenu.gd" type="Script" id=2]
 [ext_resource path="res://Levels/Empty.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Menu/LevelButtons.gd" type="Script" id=4]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -17,15 +18,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Basketball" type="Button" parent="."]
-margin_right = 200.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 90, 90 )
-icon = ExtResource( 1 )
-expand_icon = true
+[node name="EmptyScreen" parent="." instance=ExtResource( 3 )]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="LevelButtons" type="Panel" parent="HUD"]
+self_modulate = Color( 1, 1, 1, 0.682353 )
+anchor_bottom = 1.0
+margin_left = -300.0
+margin_top = 16.0
+margin_bottom = -16.0
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EmptyScreen" parent="." instance=ExtResource( 3 )]
-[connection signal="pressed" from="Basketball" to="." method="goto_level_basketball"]
+[node name="CollapseButton" type="Button" parent="HUD/LevelButtons"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_right = 32.0
+margin_bottom = 32.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Basketball" type="Button" parent="HUD/LevelButtons"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -46.5
+margin_top = 64.0
+margin_right = 46.5
+margin_bottom = 157.0
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="HUD/LevelButtons"]
+[connection signal="pressed" from="HUD/LevelButtons/CollapseButton" to="HUD/LevelButtons" method="toggle_collapsed"]
+[connection signal="pressed" from="HUD/LevelButtons/Basketball" to="." method="goto_level_basketball"]

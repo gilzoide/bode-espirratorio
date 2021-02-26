@@ -9,7 +9,7 @@ build_mode = 1
 polygon = PoolVector2Array( -506.415, -470.711, 1541.23, -473.381, 1534.96, 671.212, -510, 670 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -315.55, 565.246 )
+position = Vector2( 507.522, 565.246 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 510, 97.4921 )
