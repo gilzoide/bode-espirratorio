@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Basketball/Hoop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Basketball/Ball.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Textures/cesta.png" type="Texture" id=4]
+[ext_resource path="res://Levels/StartingState.gd" type="Script" id=5]
+[ext_resource path="res://Textures/refresh-3104.svg" type="Texture" id=6]
 
 [node name="Level" type="StaticBody2D"]
 
@@ -11,22 +13,38 @@
 build_mode = 1
 polygon = PoolVector2Array( -506.415, -470.711, 1541.23, -473.381, 1534.96, 671.212, -510, 670 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( -315.55, 565.246 )
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 510, 97.4921 )
 current = true
 zoom = Vector2( 2, 2 )
 
 [node name="Hoop" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1398.91, -96.1085 )
-
-[node name="BasketballBall" parent="." instance=ExtResource( 3 )]
-position = Vector2( 445.836, -181.538 )
+position = Vector2( 1398.39, -96.1085 )
 
 [node name="cesta" type="Sprite" parent="."]
 visible = false
 position = Vector2( 1304.32, -316.865 )
 texture = ExtResource( 4 )
+
+[node name="StartingState" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="Player" parent="StartingState" instance=ExtResource( 1 )]
+position = Vector2( -315.55, 565.246 )
+
+[node name="BasketballBall" parent="StartingState" instance=ExtResource( 3 )]
+position = Vector2( 445.836, -181.538 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ResetButton" type="Button" parent="CanvasLayer"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 63.0
+margin_bottom = 63.0
+icon = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="scored" from="Hoop" to="cesta" method="set_visible" binds= [ true ]]
+[connection signal="pressed" from="CanvasLayer/ResetButton" to="StartingState" method="reset"]
