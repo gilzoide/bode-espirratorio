@@ -8,6 +8,7 @@ onready var initial_position = rect_position
 
 func _ready():
 	toggle_collapsed(first_collapse_duration)
+	$Basketball.grab_focus()
 
 func toggle_collapsed(duration: float = collapse_duration):
 	if not is_animating:

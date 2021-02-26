@@ -34,6 +34,7 @@ position = Vector2( 445.836, -181.538 )
 
 [node name="Hoop" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1398.39, -96.1085 )
+z_index = 1
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 [connection signal="scored" from="Hoop" to="cesta" method="set_visible" binds= [ true ]]
